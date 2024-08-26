@@ -1,0 +1,27 @@
+#include "hsp3_64.as"
+title"billiontool"
+screen 0,250,218
+dialog"ˆê’›•¶š‚Ü‚Å•Û‘¶‚³‚ê‚Ü‚·\nXV‚·‚é‚Æ•¶š‚Å­‚µ‚¸‚Âd‚­‚È‚Á‚Ä‚¢‚«‚Ü‚·", 0, "info"
+sdim b, 1000000000000
+pos 0,18
+mesbox b, 250, 175, 0
+button"update", *update
+*load
+repeat 1000000000
+pos 0,0
+color 255,255,255,boxf
+color 0,0,0
+mes "now:"+count
+count = count+1
+b = b+count+"\n"
+wait 0
+loop
+*update
+clrobj
+pos 0,0
+color 255,255,255,boxf
+color 0,0,0
+mes "now"+count
+mesbox b, 250, 175, 0
+button"update", *update
+goto *load
